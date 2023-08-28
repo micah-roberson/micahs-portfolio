@@ -40,3 +40,27 @@ document.querySelector('.navbar-mobile').addEventListener('click', function () {
     navbarLinks.classList.toggle('show');
     this.classList.toggle('active');
 });
+
+const imageContainer = document.querySelector('.image-container');
+const prevButton = document.querySelector('.prev');
+const nextButton = document.querySelector('.next');
+
+
+let currentIndex = 0;
+
+function showImage(index) {
+  carousel.style.transform = `translateX(-${index * 100}%)`;
+}
+
+function prevImage() {
+  currentIndex = (currentIndex - 1 + 4) % 4;
+  showImage(currentIndex);
+}
+
+function nextImage() {
+  currentIndex = (currentIndex + 1) % 4;
+  showImage(currentIndex);
+}
+
+prevBtn.addEventListener('click', prevImage);
+nextBtn.addEventListener('click', nextImage);
