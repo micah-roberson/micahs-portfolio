@@ -362,6 +362,7 @@ body{
 .contact-button {
     display: inline-block;
     padding: 12px 30px;
+    margin-bottom: 10px;
     font-size: 16px;
     color: #fff;
     background-color: #949494;
@@ -523,6 +524,15 @@ img {
     cursor: pointer;
   }
 
+  @media (max-width: 768px) {
+    .hero-content {
+      flex-direction: column;
+    }
+
+    .hero-left,
+    .hero-right {
+      padding: 10px;
+    }}
     </style>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -740,10 +750,10 @@ img {
           <img src="images/p3.jpg" alt="Image 3">
           <img src="images/p4.jpg" alt="Image 4">
         </div>
-        <div class="carousel-nav">
-          <div class="carousel-btn" onclick="prevImage()">&#10094;</div>
-          <div class="carousel-btn" onclick="nextImage()">&#10095;</div>
-        </div>
+        <!-- <div class="carousel-nav"> -->
+          <!-- <div class="carousel-btn" onclick="prevImage()">&#10094;</div> -->
+          <!-- <div class="carousel-btn" onclick="nextImage()">&#10095;</div> -->
+        <!-- </div> -->
       </div>
      
       <script>
