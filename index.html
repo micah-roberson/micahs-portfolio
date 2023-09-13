@@ -597,10 +597,18 @@ img {
                 <button class="experience-tab active" data-target="clevercart">
                     <img src="images/clevercartlogowhite.png" class="tabs-logo">
                 </button>
-                <button class="experience-tab" data-target="physics"><img src="images/iu logo white.png" class="tabs-logo"></button>
-                <button class="experience-tab" data-target="csaa"><img src="images/csaa.png" class="tabs-logo"></button>
-                <button class="experience-tab" data-target="iedc"><img src="images/iedc.png" class="tabs-logo"></button>
-                <button class="experience-tab" data-target="gtsecurities"><img src="images/sasdasd.png" class="tabs-logo"></button>
+                <button class="experience-tab" data-target="physics">
+                    <img src="images/iu logo white.png" class="tabs-logo">
+                </button>
+                <button class="experience-tab" data-target="csaa">
+                    <img src="images/csaa.png" class="tabs-logo">
+                </button>
+                <button class="experience-tab" data-target="iedc">
+                    <img src="images/iedc.png" class="tabs-logo">
+                </button>
+                <button class="experience-tab" data-target="gtsecurities">
+                    <img src="images/sasdasd.png" class="tabs-logo">
+                </button>
             </div>
             <div class="experience-content">
                 <div id="clevercart" class="experience-tab-content active">
@@ -613,63 +621,81 @@ img {
                         • Led fundraising, talent acquisition, B2C marketing, and React Native app development.
                     </p>
                 </div>
-                <div class="experience-content">
-                    <div id="clevercart" class="experience-tab-content">
-                        <h3 class="experience-title">CleverCart</h3>
-                        <p class="experience-details">
-                            Bloomington, IN<br>
-                            Co-Founder and CEO<br>
-                            May 2022 - Present<br>
-                            • Created an efficient grocery app for personalized lists, optimal prices, stores, and deliveries.<br>
-                            • Led fundraising, talent acquisition, B2C marketing, and React Native app development.
-                        </p>
-                    </div>
-                    <div id="physics" class="experience-tab-content">
-                        <h3 class="experience-title">Indiana University Physics Department</h3>
-                        <p class="experience-details">
-                            Bloomington, IN<br>
-                            Undergraduate Researcher<br>
-                            May 2023 - August 2023<br>
-                            • Explored particle behavior in reactions with polarized targets for fundamental insights.<br>
-                            • Used advanced analytics to improve data interpretation and equipment performance.<br>
-                            • Planned contributions to important research sites like LANL and J-PARC.
-                        </p>
-                    </div>
-                    <div id="csaa" class="experience-tab-content">
-                        <h3 class="experience-title">CSAA Insurance Group</h3>
-                        <p class="experience-details">
-                            Remote<br>
-                            Intern - Strategy and Innovation Division<br>
-                            May 2022 - August 2022<br>
-                            • Designed a UBI App, reducing costs by potentially $642k yearly by preventing crashes.<br>
-                            • Analyzed trends and market opportunities in the mobility sector.<br>
-                            • Created partnerships with top 10 Mobility Companies.
-                        </p>
-                    </div>
-                    <div id="iedc" class="experience-tab-content">
-                        <h3 class="experience-title">Indiana Economic Development Corporation (IEDC)</h3>
-                        <p class="experience-details">
-                            Indianapolis, IN<br>
-                            Intern - Innovation and Entrepreneurship Division<br>
-                            December 2020 - August 2021<br>
-                            • Evaluated small businesses for COVID-19 restart grant eligibility.<br>
-                            • Led a team, strengthened research capabilities, and drove grant applications.<br>
-                            • Managed projects, secured sponsorships, and strategized market intelligence.
-                        </p>
-                    </div>
-                    <div id="gtsecurities" class="experience-tab-content">
-                        <h3 class="experience-title">GT Securities</h3>
-                        <p class="experience-details">
-                            Carmel, IN<br>
-                            Investment Banking Intern<br>
-                            August 2020 - June 2021<br>
-                            • Conducted data analysis, facilitated stakeholder meetings, and created Due Diligence Packages.<br>
-                            • Assisted fund managers in fundraising and board development.
-                        </p>
-                    </div>
+                <div id="physics" class="experience-tab-content">
+                    <h3 class="experience-title">Indiana University Physics Department</h3>
+                    <p class="experience-details">
+                        Bloomington, IN<br>
+                        Undergraduate Researcher<br>
+                        May 2023 - August 2023<br>
+                        • Explored particle behavior in reactions with polarized targets for fundamental insights.<br>
+                        • Used advanced analytics to improve data interpretation and equipment performance.<br>
+                        • Planned contributions to important research sites like LANL and J-PARC.
+                    </p>
+                </div>
+                <div id="csaa" class="experience-tab-content">
+                    <h3 class="experience-title">CSAA Insurance Group</h3>
+                    <p class="experience-details">
+                        Remote<br>
+                        Intern - Strategy and Innovation Division<br>
+                        May 2022 - August 2022<br>
+                        • Designed a UBI App, reducing costs by potentially $642k yearly by preventing crashes.<br>
+                        • Analyzed trends and market opportunities in the mobility sector.<br>
+                        • Created partnerships with top 10 Mobility Companies.
+                    </p>
+                </div>
+                <div id="iedc" class="experience-tab-content">
+                    <h3 class="experience-title">Indiana Economic Development Corporation (IEDC)</h3>
+                    <p class="experience-details">
+                        Indianapolis, IN<br>
+                        Intern - Innovation and Entrepreneurship Division<br>
+                        December 2020 - August 2021<br>
+                        • Evaluated small businesses for COVID-19 restart grant eligibility.<br>
+                        • Led a team, strengthened research capabilities, and drove grant applications.<br>
+                        • Managed projects, secured sponsorships, and strategized market intelligence.
+                    </p>
+                </div>
+                <div id="gtsecurities" class="experience-tab-content">
+                    <h3 class="experience-title">GT Securities</h3>
+                    <p class="experience-details">
+                        Carmel, IN<br>
+                        Investment Banking Intern<br>
+                        August 2020 - June 2021<br>
+                        • Conducted data analysis, facilitated stakeholder meetings, and created Due Diligence Packages.<br>
+                        • Assisted fund managers in fundraising and board development.
+                    </p>
+                </div>
             </div>
         </div>
-    </section> 
+    </section>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+    // Get all elements with the class "experience-tab" and "experience-tab-content"
+    const tabs = document.querySelectorAll('.experience-tab');
+    const tabContents = document.querySelectorAll('.experience-tab-content');
+
+    // Function to switch between tabs and content
+    function openExperience(event, experienceName) {
+        // Remove "active" class from all tabs and content
+        tabs.forEach(tab => tab.classList.remove('active'));
+        tabContents.forEach(content => content.classList.remove('active'));
+
+        // Add "active" class to the clicked tab
+        event.currentTarget.classList.add('active');
+
+        // Show the corresponding content
+        const contentToShow = document.getElementById(experienceName);
+        contentToShow.classList.add('active');
+    }
+
+    // Attach click event listeners to each tab
+    tabs.forEach(tab => {
+        tab.addEventListener('click', (event) => {
+            openExperience(event, tab.dataset.target);
+        });
+    });
+});
+
+    </script>
     
     <section id="education" class="education">
         <div class="education-container">
