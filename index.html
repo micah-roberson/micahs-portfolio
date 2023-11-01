@@ -20,7 +20,7 @@ h1, h2, h3, p {
 body{
     margin: 0;
     padding: 0;
-    background-color: #FAFAFB;   
+    background: linear-gradient(to bottom left, #000000, #232323);
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
    
 }
@@ -84,8 +84,9 @@ body{
 
 /* Hero section styles */
 .hero {
-    background-color: #F3F2F5;
+ 
     padding: 80px 0;
+    margin-top: 93vh;
 }
 
 .hero-content {
@@ -99,29 +100,36 @@ body{
 .hero-left {
     width: 60%;
     padding-right: 30px;
+    align-items: right;
+    align-content: right;
 }
 
 .hero-title {
     font-size: 28px;
-    color: #1D1D1F;
+    color: #fff;
     margin-bottom: 10px;
+    text-align: right;
 }
 
 .social-icons {
+    display: flex; /* Display the items in a row */
+    justify-content: flex-end; /* Align items to the right */
     margin-bottom: 20px;
 }
 
 .social-icons a {
     font-size: 24px;
-    color: #555;
+    color: #fff;
     margin-right: 15px;
 }
 
+
 .hero-text {
     font-size: 24px;
-    color: #1D1D1F;
+    color: #fff;
     line-height: 1.6;
     margin-bottom: 30px;
+    text-align: right;
 }
 
 .hero-right {
@@ -135,7 +143,7 @@ body{
 }
 /* Experience section styles */
 .experience {
-    background-color: #FBFBFC;
+   
     padding: 80px 0;
 }
 
@@ -236,14 +244,14 @@ body{
 }
 /* Education section styles */
 .education {
-    background-color: #FBFBFC;
+   
     padding: 80px 0;
 }
 
 .education-container {
     max-width: 1200px;
     margin: 0 auto;
-    background-color: #fff;
+ 
     border-radius: 20px;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
     overflow: hidden; /* Hide overflowing content */
@@ -252,7 +260,7 @@ body{
 
 .section-title {
     font-size: 28px;
-    color: #1D1D1F;
+    color: #fff;
     margin-bottom: 30px;
 }
 
@@ -279,14 +287,14 @@ body{
 }
 /* Achievements section styles */
 .achievements {
-    background-color: #FBFBFC;
+ 
     padding: 80px 0;
 }
 
 .achievements-container {
     max-width: 1200px;
     margin: 0 auto;
-    background-color: #fff;
+
     border-radius: 20px;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
     overflow: hidden; /* Hide overflowing content */
@@ -331,31 +339,49 @@ body{
 }
 /* Contact section styles */
 .contact {
-    background-color: #FBFBFC;
+
     padding: 80px 0;
 }
 
 .contact-container {
     max-width: 1200px;
     margin: 0 auto;
-    background-color: #fff;
+    
     border-radius: 20px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+   align-items: center;
+   justify-content: center;
     overflow: hidden; /* Hide overflowing content */
-    padding: 20px;
+    padding-left: 8vw;
     text-align: center;
 }
 
+.contact-container2 {
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #fff;
+    border-radius: 20px;
+   align-items: center;
+   justify-content: center;
+    overflow: hidden; /* Hide overflowing content */
+
+    text-align: center;
+}
 .section-title {
     font-size: 28px;
-    color: #1D1D1F;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.section-title2 {
+    font-size: 28px;
+    color: #fff;
     margin-bottom: 30px;
 }
 
 .contact-content {
     font-size: 16px;
     line-height: 1.6;
-    color: #1D1D1F;
+    color: #fff;
     margin-bottom: 30px;
 }
 
@@ -378,7 +404,7 @@ body{
 }
 /* Footer styles */
 .footer {
-    background-color: #1D1D1F;
+   
     color: #fff;
     padding: 20px 0;
 }
@@ -468,7 +494,9 @@ img {
     cursor: pointer;
 }
 .background {
-    background-color: #fff;
+    background: linear-gradient(to bottom left, #000000, #232323);
+    padding-right: 5%;
+    padding-left: 5%;
 }
 @media (max-width: 768px) {
     .navbar-links {
@@ -529,41 +557,310 @@ img {
       flex-direction: column;
     }
 
-    .hero-left,
-    .hero-right {
+    .hero-right,
+    .hero-left {
       padding: 10px;
+      align-items: center;
     }}
+  
+    #header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#flexrow {
+  
+    flex-direction: column;
+   
+}
+
+#name {
+    font-size: 3vw;
+    font-weight: 100;
+    color: white;
+    margin-left: .4vw;
+}
+
+#job-title {
+    font-size: 8vw;
+    font-weight: 700;
+    color: white;
+    flex:auto;
+    line-height: .85;
+}
+
+#subtitle {
+    font-size: 3vw;
+    font-weight: 100;
+    color: white;
+    margin-left: .4vw;
+    text-align: center;
+}
+
+#title {
+    font-size: 5vw;
+    font-weight: 700;
+    color: white;
+    flex:auto;
+    line-height: .85;
+    text-align: center;
+}
+#line {
+    margin-left: -5vw;
+    width: 53vw;
+    height: 1px;
+    background: white;
+    border-radius: 30px;
+ 
+}
+
+#spline-viewer {
+    /* Your spline viewer styles go here */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Add appropriate styling and positioning for your spline viewer */
+}
+.styled-button {
+    background-color: #3498db; /* Button background color */
+    color: #fff; /* Text color */
+    padding: 10px 20px; /* Padding around text */
+    border: none; /* Remove button border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Show a pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth color transition on hover */
+    font-size: 16px; /* Text size */
+    text-align: center; /* Center-align text */
+}
+
+.styled-button:hover {
+    background-color: #2980b9; /* Button color on hover */
+}
+.product-type-button {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+            width: 5vm;
+            border-radius: 15;
+            flex-wrap: wrap;
+        }
+.product-card {
+            width: 300px;
+            height: 400px;
+            perspective: 1000px;
+            margin: 10px;
+            float: left;
+            border-radius: 15px;
+        }
+
+        .product-card-inner {
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 0.5s;
+            transform: rotateY(0deg);
+        }
+
+        .product-card:hover .product-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .product-card-front, .product-card-back {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            backface-visibility: hidden;
+        }
+
+        .product-card-front {
+            border-radius: 15px;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .product-card-front img {
+            border-radius: 15px;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .product-card-front image {
+            border-radius: 15px;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-card-back {
+            border-radius: 15;
+            background-color: linear-gradient(to bottom left, #000000, red);
+            transform: rotateY(180deg);
+            display: flex;
+            color: #fff;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-description {
+            display: none;
+            color: #fff;
+        }
+
+        .product-card:hover .product-description {
+            display: block;
+        }
+        .projects{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+        .circle {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 7vw;
+           justify-content: center;
+            background-color: #fff;
+            border-radius: 50%;
+            margin: 10px;
+            box-shadow: #000000;
+
+        }
+
+        .circle img {
+            max-width: 60%;
+            max-height: 60%;
+            border-radius: 5px;
+        }
+        
+.parallax-container {  
+    align-items: right;
+    align-content: right;
+   
+  
+    position: relative;
+    overflow: hidden;
+}
+
+.parallax-image {
+    align-self: right;
+    position: relative;
+   
+    width: 100vw;
+    background-attachment: fixed;
+}
+
+.parallax-image img {
+    width: 100vw;
+    
+} .glass-button {
+            margin-left: 5px;
+            margin-top: 5px;
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 18px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 25px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            color: #fff;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .glass-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .glass-circle {
+            margin-left: 10px;
+            height: 70x;
+            width: 155px;  
+          
+            animation: float 3s ease-in-out infinite;
+        }
+        .flex-column{
+        flex-direction: column;
+        }
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+        .background2 {
+    position: relative;
+    margin-top: 50vw;
+    margin-bottom: -80vw;
+    margin-left: -50vw;
+     /* Adjust the width as needed */
+    height: 50vw;
+    width: 50vw;
+    z-index: -1;
+}
+
+.background2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+     
     </style>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@0.9.490/build/spline-viewer.js"></script>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body class="background">
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="navbar-logo">
-            <a href="#">
-         
-            </a>
-            <h1 class="navbar-title">Roberson Labs</h1>
-        </div>
-   
-        <ul class="navbar-links">'
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#achievements">Achievements</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-        </ul>
-     
-    </nav>
+    <div id="spline-viewer">
+        <script type="module" src="https://unpkg.com/@splinetool/viewer@0.9.490/build/spline-viewer.js"></script>
+        <spline-viewer url="https://prod.spline.design/nn76jvIBAl7RXNIv/scene.splinecode"></spline-viewer>
+    </div>
+        <div id="header">
+      
+            <div id="flexrow">
+                <div id="name">MICAH ROBERSON</div>
+                <div id="job-title">PRODUCT MANAGER</div>
+            </div>
+            <div id="line"></div>
+    </div>
     
     
-
+</div>
 
     <!-- Hero Section -->
    <section id="hero" class="hero">
+
+    
+       
+    
     <div class="hero-content">
+        <div class="hero-right">
+            <img src="images/micah.png" alt="Profile Image" class="profile-image">
+        </div>
         <div class="hero-left">
-            <h2 class="hero-title">About Me</h2>
+           
+            
             <div class="social-icons">
                 <a href="https://www.linkedin.com/in/micah-roberson/" target="_blank" rel="noopener noreferrer">
                     <i class="fab fa-linkedin"></i>
@@ -571,251 +868,318 @@ img {
                 <a href="https://github.com/micah-roberson" target="_blank" rel="noopener noreferrer">
                     <i class="fab fa-github"></i>
                 </a>
+                <h2 class="hero-title">About Me</h2>
             </div>
             <p class="hero-text">
                 Micah Roberson is an enterprising individual with an unwavering passion for innovation, constantly seeking opportunities to solve problems to make the world a better place.
                 <!-- Add the rest of your content here -->
             </p>
-            
-                <a href="https://docs.google.com/document/d/1HMj7zfLlYCkiDH93Gu52lfIWUSoQ8Gs2YR9HSr9vhKc/edit?usp=sharing" class="contact-button">Read my Resume</a>
-                <a href="https://my.spline.design/townvespaminigamecopy-f5d4377d4e0e1d782e74c51ba867ca90/" class="contact-button">Play my Resume</a>
-            
+            <div style=" display: flex;
+            text-align: center;
+            align-items: center;
+            justify-content: right;">
+                <a href="https://docs.google.com/document/d/1wnGUK2CL9CF84iO7zdbP7uimNgKhXYmtFM94anuZYyE/edit?usp=sharing" class="glass-button">Read my Resume</a>
+                <a href="https://my.spline.design/townvespaminigamecopy-f5d4377d4e0e1d782e74c51ba867ca90/" target="_blank">
+                    <img class="glass-circle" src="images/crystal.gif" alt="Clickable Image">
+                </a>
+                
+            </div>
            
         </div>
-        <div class="hero-right">
-            <img src="images/micah.png" alt="Profile Image" class="profile-image">
-        </div>
+      
     </div>
 </section>
 
 
-    
+</div>
+<div style=" display: flex;
+            flex-wrap: wrap; 
+            justify-content: center;
+            background-color: transparent;">
+<div class="circle">
+    <img src="images/python.jpeg" alt="Image 1">
+</div>
+<div class="circle">
+    <img src="images/css.png" alt="Image 1">
+</div>
+<div class="circle">
+    <img src="images/js.png" alt="Image 1">
+</div>
+<div class="circle">
+    <img src="images/html.png" alt="Image 1">
+</div>
+<div class="circle">
+    <img src="images/reactnative.png" alt="Image 1">
+</div>
+<div class="circle">
+    <img src="images/postgres.png" alt="Image 1">
+</div>
+<div class="circle">
+    <img src="images/mysql.png" alt="Image 1">
+</div>
+<div class="circle">
+    <img src="images/ec2.jpeg" alt="Image 1">
+</div>
+<div class="circle">
+    <img src="images/graphql.png" alt="Image 1">
+</div>
+<div class="circle">
+    <img src="images/rds.png" alt="Image 1">
+</div>
+<div class="circle">
+    <img src="images/lambda.png" alt="Image 1">
+</div>
+<div class="circle">
+    <img src="images/notion.png" alt="Image 1">
+</div>
+<div class="circle">
+    <img src="images/jira.png" alt="Image 1">
+</div>
+<div class="circle">
+    <img src="images/figma.png" alt="Image 1">
+</div>
+</div>
     <!-- Experience Section -->
-    <section id="experience" class="experience">
-        <div class="experience-container">
-            <div class="experience-tabs">
-                <button class="experience-tab active" data-target="clevercart">
-                    <img src="images/clevercartlogowhite.png" class="tabs-logo">
-                </button>
-                <button class="experience-tab" data-target="physics">
-                    <img src="images/iu logo white.png" class="tabs-logo">
-                </button>
-                <button class="experience-tab" data-target="csaa">
-                    <img src="images/csaa.png" class="tabs-logo">
-                </button>
-                <button class="experience-tab" data-target="iedc">
-                    <img src="images/iedc.png" class="tabs-logo">
-                </button>
-                <button class="experience-tab" data-target="gtsecurities">
-                    <img src="images/sasdasd.png" class="tabs-logo">
-                </button>
+
+  
+   
+    <div class="background2">
+        <img src="images/tumblr_o2rna9xKc21rv33k2o5_500.gif" alt="Background Image">
+    </div>
+    <script>
+        const parallaxImages = document.querySelectorAll('.background2');
+      
+      window.addEventListener('scroll', function () {
+          parallaxImages.forEach((image, index) => {
+              const scroll = window.scrollY;
+              const speed = (index + 1) * 0.2; // Adjust the speed as needed
+      
+              image.style.transform = `translateY(-${scroll * speed}px)`;
+          });
+      });
+          </script>
+          
+    <div id="subtitle">Explore</div>
+    <div id="title">MY WORK</div>
+    
+
+    
+    <div class="product-type-button">
+       
+        <button class="glass-button" onclick="showProducts('type1')">Entrepreneurship</button>
+        <button class="glass-button" onclick="showProducts('type2')">Projects</button>
+        <button class="glass-button" onclick="showProducts('type3')">Achievemnts</button>
+        <button class="glass-button" onclick="showProducts('type4')">Paintings</button>
+    </div>
+    <script>
+        function showProducts(type) {
+            const productCards = document.querySelectorAll('.product-card');
+
+            productCards.forEach(card => {
+                if (type === 'all') {
+                    card.style.display = 'block';
+                } else if (card.classList.contains(type)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+          // Hide non-'type1' products initially
+          document.addEventListener("DOMContentLoaded", function() {
+            showProducts('type1');
+        });
+    </script>
+   
+    <div class="contact-container">
+    <div class="product-card type1">
+        <div class="product-card-inner">
+            <div class="product-card-front">
+                <img src="images/app-screenshot - Copy.png" alt="Product 1">
+                <h3>CleverCart</h3>
             </div>
-            <div class="experience-content">
-                <div id="clevercart" class="experience-tab-content active">
-                    <h3 class="experience-title">CleverCart</h3>
+            <div class="product-card-back">
+                <h3 class="experience-title">CleverCart</h3>
                     <p class="experience-details">
-                        Bloomington, IN<br>
-                        Co-Founder and CEO<br>
-                        May 2022 - Present<br>
+                        www.clevercart.app<br>
+                        • Founded a grocery startup that raised $10,000 in funding.<br>
                         • Created an efficient grocery app for personalized lists, optimal prices, stores, and deliveries.<br>
-                        • Led fundraising, talent acquisition, B2C marketing, and React Native app development.
+                        • Led fundraising, talent acquisition, B2C marketing, and React Native app development.<br>
                     </p>
-                </div>
-                <div id="physics" class="experience-tab-content">
-                    <h3 class="experience-title">Indiana University Physics Department</h3>
-                    <p class="experience-details">
-                        Bloomington, IN<br>
-                        Undergraduate Researcher<br>
-                        May 2023 - August 2023<br>
-                        • Explored particle behavior in reactions with polarized targets for fundamental insights.<br>
-                        • Used advanced analytics to improve data interpretation and equipment performance.<br>
-                        • Planned contributions to important research sites like LANL and J-PARC.
-                    </p>
-                </div>
-                <div id="csaa" class="experience-tab-content">
-                    <h3 class="experience-title">CSAA Insurance Group</h3>
-                    <p class="experience-details">
-                        Remote<br>
-                        Intern - Strategy and Innovation Division<br>
-                        May 2022 - August 2022<br>
-                        • Designed a UBI App, reducing costs by potentially $642k yearly by preventing crashes.<br>
-                        • Analyzed trends and market opportunities in the mobility sector.<br>
-                        • Created partnerships with top 10 Mobility Companies.
-                    </p>
-                </div>
-                <div id="iedc" class="experience-tab-content">
-                    <h3 class="experience-title">Indiana Economic Development Corporation (IEDC)</h3>
-                    <p class="experience-details">
-                        Indianapolis, IN<br>
-                        Intern - Innovation and Entrepreneurship Division<br>
-                        December 2020 - August 2021<br>
-                        • Evaluated small businesses for COVID-19 restart grant eligibility.<br>
-                        • Led a team, strengthened research capabilities, and drove grant applications.<br>
-                        • Managed projects, secured sponsorships, and strategized market intelligence.
-                    </p>
-                </div>
-                <div id="gtsecurities" class="experience-tab-content">
-                    <h3 class="experience-title">GT Securities</h3>
-                    <p class="experience-details">
-                        Carmel, IN<br>
-                        Investment Banking Intern<br>
-                        August 2020 - June 2021<br>
-                        • Conducted data analysis, facilitated stakeholder meetings, and created Due Diligence Packages.<br>
-                        • Assisted fund managers in fundraising and board development.
-                    </p>
-                </div>
             </div>
         </div>
-    </section>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-    // Get all elements with the class "experience-tab" and "experience-tab-content"
-    const tabs = document.querySelectorAll('.experience-tab');
-    const tabContents = document.querySelectorAll('.experience-tab-content');
-
-    // Function to switch between tabs and content
-    function openExperience(event, experienceName) {
-        // Remove "active" class from all tabs and content
-        tabs.forEach(tab => tab.classList.remove('active'));
-        tabContents.forEach(content => content.classList.remove('active'));
-
-        // Add "active" class to the clicked tab
-        event.currentTarget.classList.add('active');
-
-        // Show the corresponding content
-        const contentToShow = document.getElementById(experienceName);
-        contentToShow.classList.add('active');
-    }
-
-    // Attach click event listeners to each tab
-    tabs.forEach(tab => {
-        tab.addEventListener('click', (event) => {
-            openExperience(event, tab.dataset.target);
-        });
-    });
-});
-
-    </script>
+    </div>
     
-    <section id="education" class="education">
-        <div class="education-container">
-            <h2 class="section-title">Education</h2>
-            <div class="education-item">
-                <h3 class="education-title">Indiana University - Kelley School of Business</h3>
-                <p class="education-details">
-                    Bloomington, IN<br>
-                    Finance B.S.B | Entrepreneurship and Corporate Innovation B.S.B.<br>
-                    August 2021 - May 2025<br>
-                    • Overall GPA: 3.6/4.00 — Hutton Honors<br>
-                    • Organizations: Quantum Computing Club & Shoemaker Innovation Center<br>
-                    • Leadership: Treasurer at Quantum Computing Club, Founding Brotherhood Chair KE
+    <div class="product-card type1">
+        <div class="product-card-inner">
+            <div class="product-card-front">
+                <img src="images/concilium.png" alt="Product 2">
+                <h3>Concilium</h3>
+            </div>
+            <div class="product-card-back">
+             
+                <p class="product-description">
+                    https://miwiro.wixsite.com/concilium-corp <br>
+                    • Developed a tech platform that aids school counselors in effective and standardized communication. <br>
+                    • part of Indiana University's Shoebox is an exclusive organization of 30 student startups with a 40+ startup<br>
+                    • Lead a team of four master students to build out mobile applications and data analytics products.<br>
+                      
                 </p>
             </div>
-            <!-- Add more education items as needed -->
         </div>
-    </section>
-    
-    
-    
-    <section id="projects" class="achievements">
-        <div class="achievements-container">
-            <h2 class="section-title">Projects</h2>
-            <div class="achievements-list">
-                <!-- ... (previous achievements) ... -->
-                <div class="achievement">
-                    <h3 class="achievement-title">Banana Extension</h3>
-                    <p class="achievement-content">
-                        Developed a Chrome extension for PDF interaction using Generative AI.
-                        <a href="https://chrome.google.com/webstore/detail/bananatalk/bjpajbcdofeokhmgoolgnlknlaepdakd" class="achievement-link" target="_blank">Learn more</a>
-                    </p>
-                </div>
-                <div class="achievement">
-                    <h3 class="achievement-title">Delta Kappa Epsilon Website</h3>
-                    <p class="achievement-content">
-                        Led creation of fraternity's dynamic website.
-                        <a href="http://www.dkedeltapsi.org" class="achievement-link" target="_blank">Visit website</a>
-                    </p>
-                </div>
+    </div>
+    <div class="product-card type1">
+        <div class="product-card-inner">
+            <div class="product-card-front">
+                <img src="images/brewoflife.png" alt="Product 2">
+                <h3>William Roberson LLC</h3>
+            </div>
+            <div class="product-card-back">
+                <h3>Product 2</h3>
+                <p class="product-description">• Developed and Marketed eCommerce store that sells coffee Beans and donates profits to water charity
+                </p>
             </div>
         </div>
-    </section>
-    
+    </div>
+    <div class="product-card type2">
+        <div class="product-card-inner">
+            <div class="product-card-front">
+                <img src="images/bananatalk.png" alt="Product 2">
+                <h3>Banana Extension</h3>
+            </div>
+            <div class="product-card-back">
+                <p >
+                    Developed a Chrome extension for PDF interaction using Generative AI.
+                    <a href="https://chrome.google.com/webstore/detail/bananatalk/bjpajbcdofeokhmgoolgnlknlaepdakd" class="achievement-link" target="_blank">Learn more</a>
+                </p>
+        </div>
+    </div>
+</div>
+    <div class="product-card type2">
+        <div class="product-card-inner">
+            <div class="product-card-front">
+                <img src="images/dke.png" alt="Product 2">
+                <h3>Delta Kappa Epsilon Website</h3>
+            </div>
+            <div class="product-card-back">
+                <p >
+                    Led creation of fraternity's dynamic website.
+                    <a href="http://www.dkedeltapsi.org" class="achievement-link" target="_blank">Visit website</a>
+                </p>
+        </div>
+    </div>
+</div>
 
-
-    <section id="achievements" class="achievements">
-        <div class="achievements-container">
-            <h2 class="section-title">Achievements</h2>
-            <div class="achievements-list">
-                <div class="achievement">
-                    <h3 class="achievement-title">3rd Place iQuHACK 2022 (MIT's Quantum Hackathon)</h3>
-                    <p class="achievement-content">
-                        Applied an optimized QAOA for solving the traveling salesman problem for search and rescue with a mobile app and quantum circuits.
+    <div class="product-card type3">
+        <div class="product-card-inner">
+            <div class="product-card-front">
+                <img src="images/mithackathon.png" alt="Product 2">
+                <h3>3rd Place iQuHACK 2022 (MIT's Quantum Hackathon)</h3>
+            </div>
+            <div class="product-card-back">
+                <p >
+                    Applied an optimized QAOA for solving the traveling salesman problem for search and rescue with a mobile app and quantum circuits.
                         <a href="https://www.iquise.mit.edu/iQuHACK/2023-01-27" class="achievement-link" target="_blank">Read more</a>
-                    </p>
-                </div>
-                <div class="achievement">
-                    <h3 class="achievement-title">Shoebox Scholarship</h3>
-                    <p class="achievement-content">
-                        1/30 teams to receive a scholarship for creating diverse teams through the utilization of IU’s resources.
-                    </p>
-                </div>
-                <div class="achievement">
-                    <h3 class="achievement-title">Connect Challenge Winner</h3>
-                    <p class="achievement-content">
-                        Pitched our high school guidance counselor SaaS company aimed at their burnout. Competed in a startup competition that had over 50 applicants. Won first place for our adherence to college of arts and sciences ethical guidelines.
-                    </p>
-                </div>
+                </p>
+        </div>
+    </div>
+</div>
+    <div class="product-card type3">
+        <div class="product-card-inner">
+            <div class="product-card-front">
+                <img src="images/connect.jpeg" alt="Product 2">
+                <h3>Connect Challenge Winner</h3>
             </div>
+            <div class="product-card-back">
+                <p >
+                    Pitched our high school guidance counselor SaaS company aimed at their burnout. Competed in a startup competition that had over 50 applicants. Won first place for our adherence to college of arts and sciences ethical guidelines.
+                </p>
         </div>
-    </section>
+    </div>
+</div>
+    <div class="product-card type3">
+        <div class="product-card-inner">
+            <div class="product-card-front">
+                <img src="images/1682996428482.jpeg" alt="Product 2">
+                <h3>Shoebox Scholarship</h3>
+            </div>
+            <div class="product-card-back">
+                <p>
+                    1/30 teams to receive a scholarship for creating diverse teams through the utilization of IU’s resources.
+                </p>
+        </div>
+    </div>
+    </div>
+    <div class="product-card type4">
+        <div class="product-card-inner">
+            <div class="product-card-front">
+                <img src="images/p1.jpg" alt="Product 2">
+                <h3></h3>
+            </div>
+            <div class="product-card-back">
+                <p >
+                   Abstract Memorial to my home from highschool
+                </p>
+        </div>
+    </div>
+    </div>
+    <div class="product-card type4">
+        <div class="product-card-inner">
+            <div class="product-card-front">
+                <img src="images/micahroberson.png" alt="Product 2">
+                <h3></h3>
+            </div>
+            <div class="product-card-back">
+                <p >
+                   fun digital design of me playing the piano
+                </p>
+        </div>
+    </div>
+    </div>
+    <div class="product-card type4">
+        <div class="product-card-inner">
+            <div class="product-card-front">
+                <img src="images/p3.jpg" alt="Product 2">
+                <h3></h3>
+            </div>
+            <div class="product-card-back">
+                <p >
+                    a collage and painting fusion which has my ancestors pictures on the milk cup and the night sky on the cup that was seen when I was born
+                </p>
+        </div>
+    </div>
+    </div>
+    <div class="product-card type4">
+        <div class="product-card-inner">
+            <div class="product-card-front">
+                <img src="images/p4.jpg" alt="Product 2">
+                <h3></h3>
+            </div>
+            <div class="product-card-back">
+                <p>
+                    commisioned painting in an art nevou style using spray paint
+                </p>
+        </div>
+    </div>
+    </div>
+</div>
+
+
+
     
-    <div class="carousel-container">
-        <div class="carousel">
-          <img src="images/p1.jpg" alt="Image 1">
-          <img src="images/p2.jpg" alt="Image 2">
-          <img src="images/p3.jpg" alt="Image 3">
-          <img src="images/p4.jpg" alt="Image 4">
-        </div>
-        <!-- <div class="carousel-nav"> -->
-          <!-- <div class="carousel-btn" onclick="prevImage()">&#10094;</div> -->
-          <!-- <div class="carousel-btn" onclick="nextImage()">&#10095;</div> -->
-        <!-- </div> -->
-      </div>
-     
-      <script>
-        const carousel = document.querySelector('.carousel');
-        const prevBtn = document.querySelector('.carousel-nav .prev-btn');
-        const nextBtn = document.querySelector('.carousel-nav .next-btn');
-        let currentIndex = 0;
+
+
       
-        function showImage(index) {
-          carousel.style.transform = `translateX(-${index * 100}%)`;
-        }
-      
-        function prevImage() {
-          currentIndex = (currentIndex - 1 + 4) % 4;
-          showImage(currentIndex);
-        }
-      
-        function nextImage() {
-          currentIndex = (currentIndex + 1) % 4;
-          showImage(currentIndex);
-        }
-      
-        prevBtn.addEventListener('click', prevImage);
-        nextBtn.addEventListener('click', nextImage);
-      </script>
-      
-    <section id="contact" class="contact">
-        <div class="contact-container">
-            <h2 class="section-title">Contact Me</h2>
+    
+        <div class="contact-container2">
+            <h2 class="section-title2">Contact Me</h2>
             <p class="contact-content">
                 If you have any questions or would like to work together on a project, feel free to get in touch with me.
             </p>
             <a href="mailto:miwiro@gmail.com" class="contact-button">Contact Me</a>
         </div>
-    </section>
-    
+   
+
 
     <footer class="footer">
         <div class="footer-container">
@@ -832,7 +1196,33 @@ img {
             </p>
         </div>
     </footer>
-    
+    <script>
+        const jobTitleElement = document.getElementById('job-title');
+        const jobTitles = ['PRODUCT MANAGER', 'ENTREPRENEUR', 'FULL STACK DEV'];
+        let index = 0;
+        let deleting = false;
+
+        function typeJobTitle() {
+            const currentText = jobTitleElement.textContent;
+            if (deleting) {
+                if (currentText.length > 0) {
+                    jobTitleElement.textContent = currentText.slice(0, -1);
+                } else {
+                    deleting = false;
+                    index = (index + 1) % jobTitles.length;
+                    setTimeout(typeJobTitle, 1000); // Pause for 1 second after typing
+                }
+            } else {
+                if (currentText !== jobTitles[index]) {
+                    jobTitleElement.textContent = jobTitles[index].slice(0, currentText.length + 1);
+                } else {
+                    deleting = true;
+                }
+            }
+        }
+
+        setTimeout(typeJobTitle, 1000); // Start after a 1-second delay
+    </script>
 
     <script src="scripts.js"></script>
 </body>
