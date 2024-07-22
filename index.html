@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Micah's Website</title>
-    <link rel="icon" type="image/png" href="images/0_3.png">
-    <!-- images/0_3.png -->
+    <link id="favicon" rel="icon" type="image/png"> <!-- images/0_3.png -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         /* Reset some default styles */
@@ -20,7 +20,7 @@ h1, h2, h3, p {
 body{
     margin: 0;
     padding: 0;
-    background: linear-gradient(to bottom left, #000000, #232323);
+    background: #181818;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
    
 }
@@ -646,21 +646,30 @@ margin-top: 200px;
 .styled-button:hover {
     background-color: #2980b9; /* Button color on hover */
 }
+
+
+
+
 .product-type-button {
             display: flex;
             justify-content: center;
             margin-top: 10px;
-            width: 5vm;
-            border-radius: 15;
-            flex-wrap: wrap;
         }
-.product-card {
-            width: 300px;
-            height: 400px;
+
+        .product-card {
+            width: 400px;
+            height: 300px;
             perspective: 1000px;
             margin: 10px;
-            float: left;
             border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .product-card:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
         }
 
         .product-card-inner {
@@ -680,76 +689,132 @@ margin-top: 200px;
             height: 100%;
             position: absolute;
             backface-visibility: hidden;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
         }
 
-        .product-card-front {
+        .product-card-front img, .product-card-back img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
             border-radius: 15px;
-            color: #fff;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            z-index: 1;
+            filter: brightness(0.5);
         }
-        .product-card-front img {
-            border-radius: 15px;
-            color: #fff;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+
+        .product-card-front h3, .product-card-back .description {
+            position: relative;
+            z-index: 2;
+            padding: 10px;
         }
-        .product-card-front image {
-            border-radius: 15px;
-            color: #fff;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+
+        .product-card-front h3 {
+            font-size: 1.5em;
         }
 
         .product-card-back {
-            border-radius: 15;
-            background-color: linear-gradient(to bottom left, #000000, red);
             transform: rotateY(180deg);
+        }
+
+        .product-card-back img {
+            filter: brightness(0.5) blur(10px);
+            transform: scale(-1, 1);
+        }
+
+        .product-card-back .description {
             display: flex;
-            color: #fff;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
+            text-align: center;
+            line-height: 1.6;
+            margin: 0;
+            height: 100%;
+            width: 100%;
+            padding: 20px;
         }
 
-        .product-description {
-            display: none;
-            color: #fff;
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
         }
 
-        .product-card:hover .product-description {
-            display: block;
-        }
+
+
+
+
+
+
         .projects{
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
         }
-        .circle {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 7vw;
-           justify-content: center;
-            background-color: #fff;
-            border-radius: 50%;
-            margin: 10px;
-            box-shadow: #000000;
+:root {
+    --circle-size: 7vw;
+    --inset-shadow-size: calc(var(--circle-size) * 0.15);
+}
 
-        }
+:root {
+    --circle-size: 7vw;
+    --inset-shadow-size: calc(var(--circle-size) * 0.15);
+}
 
-        .circle img {
-            max-width: 60%;
-            max-height: 60%;
-            border-radius: 5px;
-        }
+@keyframes randomMove {
+    0% {
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(calc(var(--random-x) * 1px), calc(var(--random-y) * 1px));
+    }
+    50% {
+        transform: translate(0, 0);
+    }
+    75% {
+        transform: translate(calc(var(--random-x) * -1px), calc(var(--random-y) * -1px));
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+.circle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: var(--circle-size);
+    height: var(--circle-size); /* Ensure the circle maintains its aspect ratio */
+    background: #1c1c1c;
+    border-radius: 50%;
+    margin: 10px;
+    box-shadow: 
+        inset 5px 5px 15px #0d0d0d,
+        inset -5px -5px 15px #2b2b2b,
+        5px 5px 15px rgba(0, 0, 0, 0.5),
+        -5px -5px 15px rgba(255, 255, 255, 0.05);
+    pointer-events: none; /* Make it not touchable */
+    animation: randomMove 5s infinite;
+    animation-timing-function: ease-in-out;
+}
+
+.circle img {
+    max-width: 60%;
+    max-height: 60%;
+ /* Make the images appear white */
+}
+
         
 .parallax-container {  
     align-items: right;
@@ -772,25 +837,32 @@ margin-top: 200px;
     width: 100vw;
     
 } .glass-button {
-            margin-left: 5px;
-            margin-top: 5px;
-            display: inline-block;
-            padding: 10px 20px;
-            font-size: 18px;
-            background: rgba(255, 255, 255, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 25px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            color: #fff;
-            text-decoration: none;
-            text-align: center;
-            transition: all 0.3s ease;
+    margin-left: 9px;
+    margin-right: 9px;
+    margin-top: 7px;
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 42px;
+    background: #1c1c1c; /* Adjust this color to match your design */
+    box-shadow: 
+        5px 5px 15px #0d0d0d, 
+        -5px -5px 15px #2b2b2b;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: none; /* Ensure there's no border */
+    cursor: pointer; /* Make sure it looks clickable */
         }
 
         .glass-button:hover {
-            background: rgba(255, 255, 255, 0.3);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
+            background: #232323; /* Slightly lighter on hover */
+    box-shadow: 
+        inset 5px 5px 15px #0d0d0d, 
+        inset -5px -5px 15px #2b2b2b;
+   
+}
         .glass-circle {
             margin-left: 10px;
             height: 70x;
@@ -828,7 +900,144 @@ margin-top: 200px;
     height: 100%;
     object-fit: cover;
 }
-     
+    /* Cool Button */
+    /* CSS */
+    .button-85 {
+    padding: 10px 20px;
+    margin-left: 20px;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    color: rgb(255, 255, 255);
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 25px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button-85:before {
+    content: "";
+    background: linear-gradient(
+        45deg,
+        #ff0000,
+        #ff7300,
+        #fffb00,
+        #48ff00,
+        #00ffd5,
+        #002bff,
+        #7a00ff,
+        #ff00c8,
+        #ff0000
+    );
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing-button-85 20s linear infinite;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 25px;
+}
+
+@keyframes glowing-button-85 {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 400% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+
+.button-85:after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #222;
+    left: 0;
+    top: 0;
+    border-radius: 25px;
+}
+
+
+
+
+
+
+/* new footer */
+
+
+.footer2 {
+            position: relative;
+            width: 100%;
+            height: 60px; /* Adjust the height as needed */
+            background: transparent;
+            overflow: hidden;
+            z-index: 1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .footer-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-social2 {
+            display: flex;
+            justify-content: center;
+            margin-right: 20px;
+        }
+
+        .footer-icon2 {
+            font-size: 24px;
+            color: #fff;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        .footer-icon2:hover {
+            color: #007bff;
+        }
+
+        .contact-button2 {
+            display: inline-block;
+            padding: 6px 15px;
+            font-size: 14px;
+            color: #fff;
+            background-color: transparent;
+            border: 2px solid #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+            text-decoration: none;
+        }
+
+        .contact-button2:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .footer-text2 {
+            font-size: 14px;
+            color: #fff;
+        }
+
+
+
     </style>
     <script type="module" src="https://unpkg.com/@splinetool/viewer@0.9.490/build/spline-viewer.js"></script>
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -881,9 +1090,9 @@ margin-top: 200px;
             align-items: center;
             justify-content: right;">
                 <a href="https://docs.google.com/document/d/1wnGUK2CL9CF84iO7zdbP7uimNgKhXYmtFM94anuZYyE/edit?usp=sharing" class="glass-button">Read my Resume</a>
-                <a href="https://my.spline.design/townvespaminigamecopy-f5d4377d4e0e1d782e74c51ba867ca90/" target="_blank">
-                    <img class="glass-circle" src="images/crystal.gif" alt="Clickable Image">
-                </a>
+          
+                <button href="https://my.spline.design/townvespaminigamecopy-f5d4377d4e0e1d782e74c51ba867ca90/"  class="button-85" role="button">Play Resume</button>
+             
                 
             </div>
            
@@ -899,47 +1108,45 @@ margin-top: 200px;
             justify-content: center;
             background-color: transparent;">
 <div class="circle">
-    <img src="images/python.jpeg" alt="Image 1">
+    <img src="images/python.webp" alt="Image 1">
 </div>
 <div class="circle">
-    <img src="images/css.png" alt="Image 1">
+    <img src="images/css3.png" alt="Image 1">
 </div>
 <div class="circle">
     <img src="images/js.png" alt="Image 1">
 </div>
 <div class="circle">
-    <img src="images/html.png" alt="Image 1">
+    <img src="images/html5.png" alt="Image 1">
 </div>
 <div class="circle">
-    <img src="images/reactnative.png" alt="Image 1">
+    <img src="images/React.webp" alt="Image 1">
 </div>
 <div class="circle">
-    <img src="images/postgres.png" alt="Image 1">
+    <img src="images/Postgresql.png" alt="Image 1">
 </div>
 <div class="circle">
-    <img src="images/mysql.png" alt="Image 1">
+    <img src="images/sql.png" alt="Image 1">
 </div>
 <div class="circle">
-    <img src="images/ec2.jpeg" alt="Image 1">
+    <img src="images/aws.webp" alt="Image 1">
 </div>
 <div class="circle">
-    <img src="images/graphql.png" alt="Image 1">
+    <img src="images/sap.png" alt="Image 1">
 </div>
 <div class="circle">
-    <img src="images/rds.png" alt="Image 1">
+    <img src="images/97_Docker_logo_logos-512.webp" alt="Image 1">
 </div>
 <div class="circle">
-    <img src="images/lambda.png" alt="Image 1">
+    <img src="images/golang.png" alt="Image 1">
 </div>
 <div class="circle">
-    <img src="images/notion.png" alt="Image 1">
+    <img src="images/Kotlin_Icon.png" alt="Image 1">
 </div>
 <div class="circle">
-    <img src="images/jira.png" alt="Image 1">
+    <img src="images/swift.png" alt="Image 1">
 </div>
-<div class="circle">
-    <img src="images/figma.png" alt="Image 1">
-</div>
+
 </div>
     <!-- Experience Section -->
 
@@ -966,10 +1173,10 @@ margin-top: 200px;
     
     <div class="product-type-button">
        
-        <button class="glass-button" onclick="showProducts('type1')">Entrepreneurship</button>
-        <button class="glass-button" onclick="showProducts('type2')">Projects</button>
-        <button class="glass-button" onclick="showProducts('type3')">Achievemnts</button>
-        <button class="glass-button" onclick="showProducts('type4')">Paintings</button>
+        <a class="glass-button" onclick="showProducts('type1')">Entrepreneurship</button>
+        <a class="glass-button" onclick="showProducts('type2')">Projects</button>
+        <a class="glass-button" onclick="showProducts('type3')">Achievemnts</button>
+        <a class="glass-button" onclick="showProducts('type4')">Paintings</button>
     </div>
     <script>
         function showProducts(type) {
@@ -991,230 +1198,291 @@ margin-top: 200px;
         });
     </script>
    
-    <div class="contact-container">
-    <div class="product-card type1">
+  
+   <div class="products">
+    <a href="https://www.tapticapp.com" target="_blank" class="product-card type1">
         <div class="product-card-inner">
             <div class="product-card-front">
-                <img src="images/app-screenshot - Copy.png" alt="Product 1">
+                <img src="images/taptic.png" alt="CleverCart">
+                <h3>Taptic</h3>
+            </div>
+            <div class="product-card-back">
+                <img src="images/taptic.png" alt="CleverCart">
+                <div class="description">
+                    • App for the Deaf that turns Sounds to Alerts and Vibrations.<br>
+                    • Amassed 2.5k download with 4.7 star rating.<br>
+                    • Accepted into Indiana Universities Accelerator for 4 years and 1871s growth accelerator
+                </div>
+            </div>
+        </div>
+    </a>
+    <a href="https://www.clevercart.app" target="_blank" class="product-card type1">
+        <div class="product-card-inner">
+            <div class="product-card-front">
+                <img src="images/app-screenshot - Copy.png" alt="CleverCart">
                 <h3>CleverCart</h3>
             </div>
             <div class="product-card-back">
-               
-                <a href="www.clevercart.app" class="glass-button">CleverCart's Website</a>
-                    <p class="experience-details">
-                        
-                        • Founded a grocery startup that raised $10,000 in funding.<br>
-                        • Created an efficient grocery app for personalized lists, optimal prices, stores, and deliveries.<br>
-                        • Led fundraising, talent acquisition, B2C marketing, and React Native app development.<br>
-                    </p>
+                <img src="images/app-screenshot - Copy.png" alt="CleverCart">
+                <div class="description">
+                    • Founded a grocery startup that raised $10,000 in funding.<br>
+                    • Created an efficient grocery app for personalized lists, optimal prices, stores, and deliveries.<br>
+                    • Led fundraising, talent acquisition, B2C marketing, and React Native app development.
+                </div>
             </div>
         </div>
-    </div>
-    
-    <div class="product-card type1">
+    </a>
+    <a href="https://miwiro.wixsite.com/concilium-corp" target="_blank" class="product-card type1">
         <div class="product-card-inner">
             <div class="product-card-front">
-                <img src="images/concilium.png" alt="Product 2">
+                <img src="images/concilium.png" alt="Concilium">
                 <h3>Concilium</h3>
             </div>
             <div class="product-card-back">
-                <a href="https://miwiro.wixsite.com/concilium-corp" class="glass-button">Concilium's Website</a>
-                <p class="product-description">
-                    
-                    • Developed a tech platform that aids school counselors in effective and standardized communication. <br>
-                    • part of Indiana University's Shoebox is an exclusive organization of 30 student startups with a 40+ startup<br>
-                    • Lead a team of four master students to build out mobile applications and data analytics products.<br>
-                      
-                </p>
+                <img src="images/concilium.png" alt="Concilium">
+                <div class="description">
+                    • Developed a tech platform that aids school counselors in effective and standardized communication.<br>
+                    • Part of Indiana University's Shoebox is an exclusive organization of 30 student startups with 40+ startups.<br>
+                    • Lead a team of four master students to build out mobile applications and data analytics products.
+                </div>
             </div>
         </div>
-    </div>
+    </a>
     <div class="product-card type1">
         <div class="product-card-inner">
             <div class="product-card-front">
-                <img src="images/brewoflife.png" alt="Product 2">
+                <img src="images/brewoflife.png" alt="William Roberson LLC">
                 <h3>William Roberson LLC</h3>
             </div>
             <div class="product-card-back">
-               
-                <p class="product-description">• Developed and Marketed eCommerce store that sells coffee Beans and donates profits to water charity
-                </p>
+                <img src="images/brewoflife.png" alt="William Roberson LLC">
+                <div class="description">
+                    • Developed and Marketed eCommerce store that sells coffee Beans and donates profits to water charity.
+                </div>
             </div>
         </div>
     </div>
-    <div class="product-card type2">
+    <a href="https://chrome.google.com/webstore/detail/bananatalk/bjpajbcdofeokhmgoolgnlknlaepdakd" target="_blank" class="product-card type2">
         <div class="product-card-inner">
             <div class="product-card-front">
-                <img src="images/bananatalk.png" alt="Product 2">
+                <img src="images/bananatalk.png" alt="Banana Extension">
                 <h3>Banana Extension</h3>
             </div>
             <div class="product-card-back">
-                <a href="https://chrome.google.com/webstore/detail/bananatalk/bjpajbcdofeokhmgoolgnlknlaepdakd" class="glass-button" target="_blank">Learn more</a>
-                <p >
+                <img src="images/bananatalk.png" alt="Banana Extension">
+                <div class="description">
                     Developed a Chrome extension for PDF interaction using Generative AI.
-                  
-                </p>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-    <div class="product-card type2">
+    </a>
+    <a href="http://www.dkedeltapsi.org" target="_blank" class="product-card type2">
         <div class="product-card-inner">
             <div class="product-card-front">
-                <img src="images/dke.png" alt="Product 2">
+                <img src="images/dke.png" alt="Delta Kappa Epsilon Website">
                 <h3>Delta Kappa Epsilon Website</h3>
             </div>
             <div class="product-card-back">
-                <a href="http://www.dkedeltapsi.org" class="glass-button" target="_blank">Visit website</a>
-                <p >
+                <img src="images/dke.png" alt="Delta Kappa Epsilon Website">
+                <div class="description">
                     Led creation of fraternity's dynamic website.
-                  
-                </p>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-<div class="product-card type2">
-    <div class="product-card-inner">
-        <div class="product-card-front">
-            <img src="images/idonthaveadad2.png" alt="Product 2">
-            <h3>I Don't Have A Dad Website</h3>
-        </div>
-        <div class="product-card-back">
-            <a href="http://www.idonthavea.dad" class="glass-button" target="_blank">Visit website</a>
-            <p >
-                Free Resource for Parentless Children
-              
-            </p>
-    </div>
-</div>
-</div>
-    <div class="product-card type3">
+    </a>
+    <a href="http://www.idonthavea.dad" target="_blank" class="product-card type2">
         <div class="product-card-inner">
             <div class="product-card-front">
-                <img src="images/mithackathon.png" alt="Product 2">
+                <img src="images/idonthaveadad2.png" alt="I Don't Have A Dad Website">
+                <h3>I Don't Have A Dad Website</h3>
+            </div>
+            <div class="product-card-back">
+                <img src="images/idonthaveadad2.png" alt="I Don't Have A Dad Website">
+                <div class="description">
+                    Free Resource for Parentless Children.
+                </div>
+            </div>
+        </div>
+    </a>
+    <a href="https://www.iquise.mit.edu/iQuHACK/2023-01-27" target="_blank" class="product-card type3">
+        <div class="product-card-inner">
+            <div class="product-card-front">
+                <img src="images/mithackathon.png" alt="iQuHACK 2022">
                 <h3>3rd Place iQuHACK 2022 (MIT's Quantum Hackathon)</h3>
             </div>
             <div class="product-card-back">
-                <a href="https://www.iquise.mit.edu/iQuHACK/2023-01-27" class="glass-button" target="_blank">Read more</a>
-                <p >
+                <img src="images/mithackathon.png" alt="iQuHACK 2022">
+                <div class="description">
                     Applied an optimized QAOA for solving the traveling salesman problem for search and rescue with a mobile app and quantum circuits.
-                       
-                </p>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
+    </a>
     <div class="product-card type3">
         <div class="product-card-inner">
             <div class="product-card-front">
-                <img src="images/connect.jpeg" alt="Product 2">
+                <img src="images/connect.jpeg" alt="Connect Challenge Winner">
                 <h3>Connect Challenge Winner</h3>
             </div>
             <div class="product-card-back">
-                <p >
+                <img src="images/connect.jpeg" alt="Connect Challenge Winner">
+                <div class="description">
                     Pitched our high school guidance counselor SaaS company aimed at their burnout. Competed in a startup competition that had over 50 applicants. Won first place for our adherence to college of arts and sciences ethical guidelines.
-                </p>
+                </div>
+            </div>
         </div>
     </div>
-</div>
     <div class="product-card type3">
         <div class="product-card-inner">
             <div class="product-card-front">
-                <img src="images/1682996428482.jpeg" alt="Product 2">
+                <img src="images/1682996428482.jpeg" alt="Shoebox Scholarship">
                 <h3>Shoebox Scholarship</h3>
             </div>
             <div class="product-card-back">
-                <p>
+                <img src="images/1682996428482.jpeg" alt="Shoebox Scholarship">
+                <div class="description">
                     1/30 teams to receive a scholarship for creating diverse teams through the utilization of IU’s resources.
-                </p>
+                </div>
+            </div>
         </div>
-    </div>
     </div>
     <div class="product-card type4">
         <div class="product-card-inner">
             <div class="product-card-front">
-                <img src="images/p1.jpg" alt="Product 2">
+                <img src="images/p1.jpg" alt="Painting">
                 <h3></h3>
             </div>
             <div class="product-card-back">
-                <p >
-                   Abstract Memorial to my home from highschool
-                </p>
+                <img src="images/p1.jpg" alt="Painting">
+                <div class="description">
+                    Abstract Memorial to my home from high school.
+                </div>
+            </div>
         </div>
-    </div>
     </div>
     <div class="product-card type4">
         <div class="product-card-inner">
             <div class="product-card-front">
-                <img src="images/micahroberson.png" alt="Product 2">
+                <img src="images/micahroberson.png" alt="Digital Design">
                 <h3></h3>
             </div>
             <div class="product-card-back">
-                <p >
-                   fun digital design of me playing the piano
-                </p>
+                <img src="images/micahroberson.png" alt="Digital Design">
+                <div class="description">
+                    Fun digital design of me playing the piano.
+                </div>
+            </div>
         </div>
-    </div>
     </div>
     <div class="product-card type4">
         <div class="product-card-inner">
             <div class="product-card-front">
-                <img src="images/p3.jpg" alt="Product 2">
+                <img src="images/p3.jpg" alt="Collage Painting">
                 <h3></h3>
             </div>
             <div class="product-card-back">
-                <p >
-                    a collage and painting fusion which has my ancestors pictures on the milk cup and the night sky on the cup that was seen when I was born
-                </p>
+                <img src="images/p3.jpg" alt="Collage Painting">
+                <div class="description">
+                    A collage and painting fusion which has my ancestors pictures on the milk cup and the night sky on the cup that was seen when I was born.
+                </div>
+            </div>
         </div>
-    </div>
     </div>
     <div class="product-card type4">
         <div class="product-card-inner">
             <div class="product-card-front">
-                <img src="images/p4.JPG" alt="Product 2">
+                <img src="images/p4.JPG" alt="Commissioned Painting">
                 <h3></h3>
             </div>
             <div class="product-card-back">
-                <p>
-                    commisioned painting in an art nevou style using spray paint
-                </p>
+                <img src="images/p4.JPG" alt="Commissioned Painting">
+                <div class="description">
+                    Commissioned painting in an art nouveau style using spray paint.
+                </div>
+            </div>
         </div>
-    </div>
     </div>
 </div>
 
 
 
-    
 
 
-      
-    
-        <div class="contact-container2">
-            <h2 class="section-title2">Contact Me</h2>
-            <p class="contact-content">
-                If you have any questions or would like to work together on a project, feel free to get in touch with me.
-            </p>
-            <a href="mailto:miwiro@gmail.com" class="contact-button">Contact Me</a>
-        </div>
-   
 
 
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-social">
+           
                 <a href="https://github.com/micah-roberson" target="_blank" class="footer-icon">
                     <i class="fab fa-github"></i>
                 </a>
                 <a href="https://www.linkedin.com/in/micah-roberson/" target="_blank" class="footer-icon">
                     <i class="fab fa-linkedin"></i>
                 </a>
+                <a href="mailto:miwiro@gmail.com" class="contact-button2">Contact Me</a>
+           
             </div>
             <p class="footer-text">
                 &copy; 2023 Micah Roberson. All rights reserved.
             </p>
         </div>
     </footer>
+
+
     <script>
+document.addEventListener("DOMContentLoaded", function() {
+    const circles = document.querySelectorAll('.circle');
+    circles.forEach(circle => {
+        const randomX = Math.random() * 20 - 10; // Random value between -10 and 10
+        const randomY = Math.random() * 20 - 10; // Random value between -10 and 10
+        circle.style.setProperty('--random-x', randomX);
+        circle.style.setProperty('--random-y', randomY);
+    });
+});
+
+const canvas = document.createElement('canvas');
+    canvas.width = 64;
+    canvas.height = 64;
+    const context = canvas.getContext('2d');
+
+    let x = 32;
+    let y = 32;
+    let dx = 2;
+    let dy = 2;
+
+    function drawFavicon() {
+        context.clearRect(0, 0, canvas.width, canvas.height);
+
+        // Draw the background
+        context.fillStyle = '#1c1c1c';
+        context.fillRect(0, 0, canvas.width, canvas.height);
+
+        // Draw the moving circle
+        context.beginPath();
+        context.arc(x, y, 10, 0, Math.PI * 2);
+        context.fillStyle = '#ffffff';
+        context.fill();
+
+        // Update the position of the circle
+        x += dx;
+        y += dy;
+
+        // Bounce off the edges
+        if (x <= 10 || x >= 54) dx = -dx;
+        if (y <= 10 || y >= 54) dy = -dy;
+
+        // Update the favicon
+        const favicon = document.getElementById('favicon');
+        favicon.href = canvas.toDataURL('image/png');
+
+        // Repeat
+        requestAnimationFrame(drawFavicon);
+    }
+
+    drawFavicon();
+
+
         const jobTitleElement = document.getElementById('job-title');
         const jobTitles = ['PRODUCT MANAGER', 'ENTREPRENEUR', 'FULL STACK DEV'];
         let index = 0;
