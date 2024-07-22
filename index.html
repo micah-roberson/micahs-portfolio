@@ -136,7 +136,31 @@ body{
     width: 40%;
     text-align: right;
 }
+@media (max-width: 768px) {
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
 
+    .hero-left, .hero-right {
+        width: 100%;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .glass-button {
+        width: 80%; /* Ensure buttons take up more space on mobile */
+        margin-bottom: 10px;
+    }
+
+    .button-85 {
+        width: 80%; /* Ensure buttons take up more space on mobile */
+        margin-bottom: 10px;
+    }
+}
 .profile-image {
     border-radius: 30px;
     max-width: 100%;
@@ -403,6 +427,17 @@ body{
     background-color: #1D1D1F;
 }
 /* Footer styles */
+
+@media (max-width: 768px) {
+    .contact-button2 {
+        font-size: 12px;
+        padding: 5px 10px;
+    }
+
+    .footer-text2 {
+        font-size: 12px;
+    }
+}
 .footer {
    
     color: #fff;
@@ -648,14 +683,20 @@ margin-top: 200px;
 }
 
 
-
-
-.product-type-button {
-            display: flex;
+@media (max-width: 768px) {
+    .product-type-button {
+         
             justify-content: center;
             margin-top: 10px;
-        }
-
+    }
+}.product-type-button {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10px;
+    padding: 0 20px; /* Add padding to ensure content does not touch the edges */
+    box-sizing: border-box;
+}
         .product-card {
             width: 400px;
             height: 300px;
@@ -857,6 +898,32 @@ margin-top: 200px;
         }
 
         .glass-button:hover {
+            background: #232323; /* Slightly lighter on hover */
+    box-shadow: 
+        inset 5px 5px 15px #0d0d0d, 
+        inset -5px -5px 15px #2b2b2b;
+   
+}.glass-button2 {
+    margin-left: 9px;
+    margin-right: 9px;
+    margin-top: 20px;
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 42px;
+    background: #1c1c1c; /* Adjust this color to match your design */
+    box-shadow: 
+        5px 5px 15px #0d0d0d, 
+        -5px -5px 15px #2b2b2b;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: none; /* Ensure there's no border */
+    cursor: pointer; /* Make sure it looks clickable */
+        }
+
+        .glass-button2:hover {
             background: #232323; /* Slightly lighter on hover */
     box-shadow: 
         inset 5px 5px 15px #0d0d0d, 
@@ -1089,7 +1156,7 @@ margin-top: 200px;
             text-align: center;
             align-items: center;
             justify-content: right;">
-                <a href="https://docs.google.com/document/d/1wnGUK2CL9CF84iO7zdbP7uimNgKhXYmtFM94anuZYyE/edit?usp=sharing" class="glass-button">Read my Resume</a>
+                <a href="https://docs.google.com/document/d/1wnGUK2CL9CF84iO7zdbP7uimNgKhXYmtFM94anuZYyE/edit?usp=sharing" class="glass-button">Read Resume</a>
           
                 <button href="https://my.spline.design/townvespaminigamecopy-f5d4377d4e0e1d782e74c51ba867ca90/"  class="button-85" role="button">Play Resume</button>
              
@@ -1173,10 +1240,10 @@ margin-top: 200px;
     
     <div class="product-type-button">
        
-        <a class="glass-button" onclick="showProducts('type1')">Entrepreneurship</button>
-        <a class="glass-button" onclick="showProducts('type2')">Projects</button>
-        <a class="glass-button" onclick="showProducts('type3')">Achievemnts</button>
-        <a class="glass-button" onclick="showProducts('type4')">Paintings</button>
+        <a class="glass-button2" onclick="showProducts('type1')">Entrepreneurship</a>
+        <a class="glass-button2" onclick="showProducts('type2')">Projects</a>
+        <a class="glass-button2" onclick="showProducts('type3')">Achievements</a>
+        <a class="glass-button2" onclick="showProducts('type4')">Paintings</a>
     </div>
     <script>
         function showProducts(type) {
@@ -1420,11 +1487,11 @@ margin-top: 200px;
                 <a href="https://www.linkedin.com/in/micah-roberson/" target="_blank" class="footer-icon">
                     <i class="fab fa-linkedin"></i>
                 </a>
-                <a href="mailto:miwiro@gmail.com" class="contact-button2">Contact Me</a>
+
            
             </div>
             <p class="footer-text">
-                &copy; 2023 Micah Roberson. All rights reserved.
+                &copy; 2024 Micah Roberson.
             </p>
         </div>
     </footer>
